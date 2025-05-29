@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FarmFresh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+            z-index: -1;
+        }
+
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(46, 204, 113, 0.3), rgba(39, 174, 96, 0.3));
+            z-index: 1;
+        }
+
+        .about-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, #fff, transparent);
+            z-index: 2;
+        }
+
+        .about-header .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .about-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #2ecc71;
+            border-radius: 2px;
+        }
+
+        .about-header p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-top: 1.5rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-header .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .about-header .scroll-indicator i {
+            color: white;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            z-index: -1;
+        }
+
+        .mission-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+        }
+
+        .mission-section h2 {
+            color: #2ecc71;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mission-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #2ecc71;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .mission-section:hover h2::after {
+            width: 120px;
+        }
+
+        .mission-section p {
+            max-width: 800px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 1.5rem;
+            background: rgba(46, 204, 113, 0.1);
+            padding: 1.2rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover i {
+            transform: scale(1.1);
+            background: #2ecc71;
+            color: white;
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .value-card p {
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .team-section {
+            text-align: center;
+            margin: 6rem 0;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        .team-section h2 {
+            color: #2ecc71;
+            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .team-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .team-section:hover h2::after {
+            width: 150px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: center 20%;
+            transition: all 0.5s ease;
+            filter: brightness(0.95);
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+            object-position: center 30%;
+            filter: brightness(1.05);
+        }
+
+        .team-info {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .team-info h3 {
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .team-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: #2ecc71;
+            transition: width 0.3s ease;
+        }
+
+        .team-member:hover .team-info h3::after {
+            width: 80px;
+        }
+
+        .team-info p {
+            color: #34495e;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .team-social {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-social a {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        .team-social a:hover {
+            background: #2ecc71;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .stat-item:hover::before {
+            opacity: 1;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .stat-item p {
+            color: #34495e;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .stat-item:hover h3,
+        .stat-item:hover p {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .about-header {
+                height: 50vh;
+                background-attachment: scroll;
+            }
+
+            .about-header h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-header p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+
+            .mission-section h2 {
+                font-size: 2rem;
+            }
+
+            .team-section {
+                margin: 4rem 0;
+                padding: 2rem 1rem;
+            }
+
+            .team-section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .team-member img {
+                height: 300px;
+            }
+
+            .team-info {
+                padding: 1.5rem;
+            }
+
+            .team-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .team-info p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <h1>FarmFresh</h1>
+                </a>
+            </div>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="farmers.html">Farmers</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Header -->
+    <header class="about-header">
+        <div class="hero-content">
+            <h1>About FarmFresh</h1>
+            <p>Connecting farmers directly with consumers for fresh, organic produce.</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>Our Story</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>FarmFresh was founded with a simple mission: to create a direct connection between farmers and consumers. We believe in supporting local agriculture while providing fresh, organic produce to our community.</p>
+                
+                <p>Our platform ensures that farmers receive fair prices for their produce while consumers get access to the freshest vegetables and fruits, delivered directly from the farm to their doorstep.</p>
+
+                <h3>Why Choose FarmFresh?</h3>
+                <ul>
+                    <li>100% Organic Produce: All our vegetables and fruits are grown using natural farming methods</li>
+                    <li>Direct from Farmers: Eliminate middlemen and get produce directly from the source</li>
+                    <li>Fair Prices: Support farmers while getting competitive prices</li>
+                    <li>Fresh Delivery: Get your produce delivered within 24 hours of harvest</li>
+                    <li>Wide Selection: Choose from a variety of seasonal vegetables and fruits</li>
+                </ul>
+
+                <a href="contact.html" class="cta-button">Get in Touch</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Produce">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ram">
+                <div class="team-info">
+                    <h3>Ram</h3>
+                    <p>Founder & CEO</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Jane Smith">
+                <div class="team-info">
+                    <h3>Abi</h3>
+                    <p>Operations Manager</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mani">
+                <div class="team-info">
+                    <h3>Mani</h3>
+                    <p>Farmer Relations</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FarmFresh</h3>
+                <p>Connecting farmers directly with consumers for fresh, organic produce.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="farmers.html">Farmers</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@farmfresh.com</p>
+                <p>Phone: +91 1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FarmFresh. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="nav-overlay"></div>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navbar = document.querySelector('.navbar');
+        const overlay = document.querySelector('.nav-overlay');
+
+        // Function to handle scroll
+        function handleScroll() {
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Initial check for scroll position
+        handleScroll();
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html> 
