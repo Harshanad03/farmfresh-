@@ -188,6 +188,7 @@ img.loaded {
     color: var(--primary-color);
     background: rgba(76, 175, 80, 0.1);
     transform: scale(1.1);
+    animation: buttonPulse 0.6s ease-out;
 }
 
 .logo a {
@@ -252,7 +253,8 @@ img.loaded {
 .nav-links a:hover, .nav-links a.active {
     color: var(--primary-color);
     background: rgba(76, 175, 80, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
 }
 
 .home-page .nav-links a:hover, 
@@ -305,12 +307,28 @@ img.loaded {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    animation: colorChange 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.hero-content h1:hover {
+    animation: gradientText 3s ease-in-out infinite;
+    transform: scale(1.02);
 }
 
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    animation: colorChange 4s ease-in-out infinite;
+    animation-delay: 1s;
+    transition: all 0.3s ease;
+}
+
+.hero-content p:hover {
+    animation: gradientText 3s ease-in-out infinite;
+    transform: scale(1.02);
+    animation-delay: 0s;
 }
 
 .cta-button, .contact-farmer {
@@ -331,16 +349,18 @@ img.loaded {
 
 
 .cta-button:hover, .contact-farmer:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
     background: #FF8A00;
+    animation: buttonPulse 0.6s ease-out;
 }
 
 
 
 .cta-button:active, .contact-farmer:active {
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(0.95);
     box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    animation: buttonShake 0.3s ease-out;
 }
 
 .product-card .cta-button {
@@ -358,6 +378,13 @@ img.loaded {
 .product-card .cta-button:hover {
     background: var(--primary-dark);
     box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.product-card .cta-button:active {
+    transform: translateY(-1px) scale(0.95);
+    animation: buttonShake 0.3s ease-out;
 }
 
 .contact-farmer {
@@ -368,6 +395,13 @@ img.loaded {
 .contact-farmer:hover {
     background: var(--primary-dark);
     box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.contact-farmer:active {
+    transform: translateY(-1px) scale(0.95);
+    animation: buttonShake 0.3s ease-out;
 }
 
 .hero .cta-button {
@@ -376,12 +410,28 @@ img.loaded {
 }
 
 .hero .cta-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.hero .cta-button:active {
+    transform: translateY(-1px) scale(0.95);
+    animation: buttonShake 0.3s ease-out;
 }
 
 .about-text .cta-button {
     background: var(--primary-color);
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.about-text .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.about-text .cta-button:active {
+    transform: translateY(-1px) scale(0.95);
+    animation: buttonShake 0.3s ease-out;
 }
 
 /* Features Section */
@@ -460,6 +510,7 @@ img.loaded {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 400px;
 }
 
 .product-card:hover {
@@ -629,6 +680,7 @@ footer {
 .menu-toggle:hover {
     color: var(--primary-color);
     transform: scale(1.1);
+    animation: buttonPulse 0.6s ease-out;
 }
 
 /* Mobile Navigation */
@@ -767,6 +819,9 @@ footer {
     margin: 0 1.5rem 1rem;
     text-align: center;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .farmer-info p {
@@ -828,8 +883,9 @@ footer {
 
 .scroll-to-top:hover {
     background: var(--primary-dark);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.1);
     box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+    animation: buttonPulse 0.6s ease-out;
 }
 
 /* Enhanced focus states for accessibility */
@@ -913,6 +969,85 @@ a:focus {
     }
 }
 
+@keyframes buttonPulse {
+    0% {
+        transform: translateY(-3px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-3px) scale(1.1);
+    }
+    100% {
+        transform: translateY(-3px) scale(1.05);
+    }
+}
+
+@keyframes buttonShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(255, 152, 0, 0.6), 0 0 20px rgba(255, 152, 0, 0.3);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    25% {
+        color: #98f79b;
+        text-shadow: 0 0 15px rgba(146, 237, 149, 0.6);
+    }
+    50% {
+        color: #eebd75;
+        text-shadow: 0 0 15px rgba(242, 192, 117, 0.6);
+    }
+    75% {
+        color: #c0f155;
+        text-shadow: 0 0 15px rgba(219, 224, 62, 0.6);
+    }
+    100% {
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes gradientText {
+    0% {
+        background: linear-gradient(45deg, #ffffff, #4CAF50, #FF9800, #2196F3);
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 200% 50%;
+    }
+    75% {
+        background-position: 300% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 
 /* Enhanced button animations */
@@ -953,6 +1088,182 @@ a:focus {
 
 
 
+
+
+
+/* Enhanced button animations for index page */
+.cta-button, .contact-farmer {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button::before, .contact-farmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before, .contact-farmer:hover::before {
+    left: 100%;
+}
+
+/* Enhanced navigation button animations */
+.nav-links a {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Enhanced feature card button animations */
+.feature-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced product card button animations */
+.product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Enhanced scroll to top button */
+.scroll-to-top {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px) scale(1.1);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+/* Enhanced mobile menu toggle */
+.menu-toggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+/* Enhanced back button */
+.back-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+/* Enhanced ripple effect for buttons */
+.cta-button, .contact-farmer, button {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Enhanced button states for index page */
+.home-page .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.home-page .product-card .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+.home-page .nav-links a:hover {
+    transform: translateY(-2px) scale(1.05);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+/* Enhanced loading animation for index page */
+.home-page .hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.home-page .feature-card {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.home-page .product-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered animation for product cards */
+.home-page .product-card:nth-child(1) { animation-delay: 0.1s; }
+.home-page .product-card:nth-child(2) { animation-delay: 0.2s; }
+.home-page .product-card:nth-child(3) { animation-delay: 0.3s; }
+.home-page .product-card:nth-child(4) { animation-delay: 0.4s; }
+.home-page .product-card:nth-child(5) { animation-delay: 0.5s; }
+.home-page .product-card:nth-child(6) { animation-delay: 0.6s; }
+.home-page .product-card:nth-child(7) { animation-delay: 0.7s; }
+.home-page .product-card:nth-child(8) { animation-delay: 0.8s; }
+.home-page .product-card:nth-child(9) { animation-delay: 0.9s; }
+.home-page .product-card:nth-child(10) { animation-delay: 1.0s; }
+.home-page .product-card:nth-child(11) { animation-delay: 1.1s; }
+.home-page .product-card:nth-child(12) { animation-delay: 1.2s; }
+
+/* Enhanced feature card animations */
+.home-page .feature-card:nth-child(1) { animation-delay: 0.2s; }
+.home-page .feature-card:nth-child(2) { animation-delay: 0.4s; }
+.home-page .feature-card:nth-child(3) { animation-delay: 0.6s; }
 
 
 

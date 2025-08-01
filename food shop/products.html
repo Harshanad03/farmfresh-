@@ -45,86 +45,9 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             padding: 4rem 5%;
-        }
-
-        .product-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            color: #2ecc71;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .farmer-info {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            margin-top: auto;
-            border-radius: 10px;
-        }
-
-        .farmer-info h4 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-farmer {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
-            background-color: #2ecc71;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .contact-farmer:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -178,230 +101,174 @@
         <!-- Vegetables Section -->
         <h2 class="section-title">Fresh Vegetables</h2>
         <!-- Product 1 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Tomatoes" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Tomatoes</h3>
-                <p class="price">₹40/kg</p>
-                <p>Organic tomatoes grown with natural farming methods. Rich in flavor and nutrients.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Rajesh Kumar</h4>
-                    <p>Location: Perundurai, Erode</p>
-                    <p>Experience: 15 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Tomatoes">
+            <h3>Fresh Tomatoes</h3>
+            <p>₹40/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Rajesh Kumar</p>
+                <p>Location: Perundurai, Erode</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 2 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Organic Potatoes" class="product-image">
-            <div class="product-info">
-                <h3>Organic Potatoes</h3>
-                <p class="price">₹30/kg</p>
-                <p>Fresh potatoes grown without any chemical fertilizers. Perfect for all your cooking needs.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Murugan</h4>
-                    <p>Location: Avinashi, Tirupur</p>
-                    <p>Experience: 20 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Organic Potatoes">
+            <h3>Organic Potatoes</h3>
+            <p>₹30/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Murugan</p>
+                <p>Location: Avinashi, Tirupur</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 3 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Carrots" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Carrots</h3>
-                <p class="price">₹35/kg</p>
-                <p>Sweet and crunchy carrots, rich in vitamins and minerals.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Karthik</h4>
-                    <p>Location: Yercaud, Salem</p>
-                    <p>Experience: 10 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Carrots">
+            <h3>Fresh Carrots</h3>
+            <p>₹35/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Karthik</p>
+                <p>Location: Yercaud, Salem</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 4 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Organic Spinach" class="product-image">
-            <div class="product-info">
-                <h3>Organic Spinach</h3>
-                <p class="price">₹25/bunch</p>
-                <p>Fresh, organic spinach leaves packed with iron and nutrients.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Ramesh</h4>
-                    <p>Location: Palladam, Tirupur</p>
-                    <p>Experience: 15 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Organic Spinach">
+            <h3>Organic Spinach</h3>
+            <p>₹25/bunch</p>
+            <div class="farmer-info">
+                <p>Farmer: Ramesh</p>
+                <p>Location: Palladam, Tirupur</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 5 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1599145566106-fa02aafba0b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG9uaW9ufGVufDB8fDB8fHww" alt="Fresh Onions" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Onions</h3>
-                <p class="price">₹45/kg</p>
-                <p>Organic onions with strong flavor and long shelf life.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Mani</h4>
-                    <p>Location: Chennimalai, Erode</p>
-                    <p>Experience: 18 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1599145566106-fa02aafba0b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG9uaW9ufGVufDB8fDB8fHww" alt="Fresh Onions">
+            <h3>Fresh Onions</h3>
+            <p>₹45/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Mani</p>
+                <p>Location: Chennimalai, Erode</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 6 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Green Capsicum" class="product-image">
-            <div class="product-info">
-                <h3>Green Capsicum</h3>
-                <p class="price">₹60/kg</p>
-                <p>Fresh, crunchy capsicum perfect for salads and cooking.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Suresh</h4>
-                    <p>Location: Attur, Salem</p>
-                    <p>Experience: 12 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Green Capsicum">
+            <h3>Green Capsicum</h3>
+            <p>₹60/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Suresh</p>
+                <p>Location: Attur, Salem</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 7 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1638901592594-04adaef61b80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNhbGlmbG93ZXJ8ZW58MHx8MHx8fDA%3D" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Cauliflower</h3>
-                <p class="price">₹50/piece</p>
-                <p>Organic cauliflower, perfect for curries and salads.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Velu</h4>
-                    <p>Location: Dharapuram, Tirupur</p>
-                    <p>Experience: 14 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1638901592594-04adaef61b80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNhbGlmbG93ZXJ8ZW58MHx8MHx8fDA%3D" alt="Fresh Cauliflower">
+            <h3>Fresh Cauliflower</h3>
+            <p>₹50/piece</p>
+            <div class="farmer-info">
+                <p>Farmer: Velu</p>
+                <p>Location: Dharapuram, Tirupur</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Product 8 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1567375698348-5d9d5ae99de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Green Beans" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Green Beans</h3>
-                <p class="price">₹40/kg</p>
-                <p>Crisp and tender green beans, rich in fiber and vitamins.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Kumar</h4>
-                    <p>Location: Sathyamangalam, Erode</p>
-                    <p>Experience: 16 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1567375698348-5d9d5ae99de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Green Beans">
+            <h3>Fresh Green Beans</h3>
+            <p>₹40/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Kumar</p>
+                <p>Location: Sathyamangalam, Erode</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruits Section -->
         <h2 class="section-title">Fresh Fruits</h2>
         
         <!-- Fruit 1 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Mangoes" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Mangoes</h3>
-                <p class="price">₹120/kg</p>
-                <p>Sweet and juicy Alphonso mangoes, perfect for summer. Rich in vitamins and antioxidants.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Senthil Kumar</h4>
-                    <p>Location: Mettur, Salem</p>
-                    <p>Experience: 12 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Mangoes">
+            <h3>Fresh Mangoes</h3>
+            <p>₹120/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Senthil Kumar</p>
+                <p>Location: Mettur, Salem</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruit 2 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Apples" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Apples</h3>
-                <p class="price">₹180/kg</p>
-                <p>Crunchy and sweet Kashmiri apples. Rich in fiber and vitamin C.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Ganesh</h4>
-                    <p>Location: Bhavani, Erode</p>
-                    <p>Experience: 8 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Apples">
+            <h3>Fresh Apples</h3>
+            <p>₹180/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Ganesh</p>
+                <p>Location: Bhavani, Erode</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruit 3 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Bananas" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Bananas</h3>
-                <p class="price">₹60/dozen</p>
-                <p>Sweet and nutritious bananas. Perfect for snacking and smoothies.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Arumugam</h4>
-                    <p>Location: Omalur, Salem</p>
-                    <p>Experience: 22 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Bananas">
+            <h3>Fresh Bananas</h3>
+            <p>₹60/dozen</p>
+            <div class="farmer-info">
+                <p>Farmer: Arumugam</p>
+                <p>Location: Omalur, Salem</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruit 4 -->
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1547514701-42782101795e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Oranges" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Oranges</h3>
-                <p class="price">₹90/kg</p>
-                <p>Juicy and tangy Nagpur oranges. Rich in vitamin C and antioxidants.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Pandian</h4>
-                    <p>Location: Udumalpet, Tirupur</p>
-                    <p>Experience: 11 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1547514701-42782101795e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Oranges">
+            <h3>Fresh Oranges</h3>
+            <p>₹90/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Pandian</p>
+                <p>Location: Udumalpet, Tirupur</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruit 5 -->
-        <div class="product-item">
-            <img src="https://img.freepik.com/free-photo/sweet-pomegranates-white-surface_140725-10009.jpg?ga=GA1.1.287591308.1747676053&semt=ais_hybrid&w=740" alt="Fresh Pomegranates" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Pomegranates</h3>
-                <p class="price">₹140/kg</p>
-                <p>Sweet and juicy pomegranates. Rich in antioxidants and vitamins.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Sunita Sharma</h4>
-                    <p>Location: Gobichettipalayam, Erode</p>
-                    <p>Experience: 10 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://img.freepik.com/free-photo/sweet-pomegranates-white-surface_140725-10009.jpg?ga=GA1.1.287591308.1747676053&semt=ais_hybrid&w=740" alt="Fresh Pomegranates">
+            <h3>Fresh Pomegranates</h3>
+            <p>₹140/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Sunita Sharma</p>
+                <p>Location: Gobichettipalayam, Erode</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
 
         <!-- Fruit 6 -->
-        <div class="product-item">
-            <img src="https://img.freepik.com/free-photo/view-sweet-delicious-red-grapes_23-2151538230.jpg?uid=R185013532&ga=GA1.1.287591308.1747676053&semt=ais_hybrid&w=740" alt="Fresh Grapes" class="product-image">
-            <div class="product-info">
-                <h3>Fresh Grapes</h3>
-                <p class="price">₹160/kg</p>
-                <p>Sweet and seedless grapes. Perfect for snacking and making juice.</p>
-                <div class="farmer-info">
-                    <h4>Farmer: Ramesh Kumar</h4>
-                    <p>Location: Rasipuram, Salem</p>
-                    <p>Experience: 12 years</p>
-                    <a href="contact.html" class="contact-farmer">Contact Farmer</a>
-                </div>
+        <div class="product-card">
+            <img src="https://img.freepik.com/free-photo/view-sweet-delicious-red-grapes_23-2151538230.jpg?uid=R185013532&ga=GA1.1.287591308.1747676053&semt=ais_hybrid&w=740" alt="Fresh Grapes">
+            <h3>Fresh Grapes</h3>
+            <p>₹160/kg</p>
+            <div class="farmer-info">
+                <p>Farmer: Ramesh Kumar</p>
+                <p>Location: Rasipuram, Salem</p>
             </div>
+            <a href="contact.html" class="cta-button">View Details</a>
         </div>
     </section>
 
