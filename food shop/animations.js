@@ -188,16 +188,36 @@ class Navigation {
                 if (navOverlay) {
                     navOverlay.classList.toggle('active');
                 }
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+        }
+
+        // Close mobile menu when clicking overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
             });
         }
 
         // Close menu when clicking on links
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // Allow the default navigation to happen
+                // Don't prevent default - let the link work normally
+                
+                // Close the mobile menu
                 navLinks.classList.remove('active');
                 if (navOverlay) {
                     navOverlay.classList.remove('active');
                 }
+                document.body.style.overflow = '';
+                
+                // Add a small delay to ensure the menu closes before navigation
+                setTimeout(() => {
+                    // The link will navigate naturally
+                }, 100);
             });
         });
     }
